@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>CRUD Flask</title>
+</head>
+<body>
+    <h2>Daftar Tugas</h2>
+    <a href="/add">Tambah Tugas</a>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task.name }} 
+            <a href="/edit/{{ task.id }}">Edit</a> 
+            <a href="/delete/{{ task.id }}" onclick="return confirm('Hapus data ini?')">Hapus</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
